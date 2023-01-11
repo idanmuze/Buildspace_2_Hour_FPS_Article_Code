@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://levels/gridbox/sound/Ambiance_Wind_Calm_Loop_Stereo.wav" type="AudioStream" id=1]
+[ext_resource path="res://levels/gridbox/geometry/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/gridbox/geometry/Cube.tscn" type="PackedScene" id=5]
+[ext_resource path="res://user_interface/gui/gui.tscn" type="PackedScene" id=6]
+[ext_resource path="res://kinetic_cube/kinetic_cube.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/gridbox/geometry/Floor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://levels/gridbox/environment.tres" type="Environment" id=9]
+[ext_resource path="res://levels/gridbox/gridbox.gd" type="Script" id=10]
+
+[node name="Gridbox" type="Spatial"]
+script = ExtResource( 10 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31911, 0 )
+speed = 6
+
+[node name="ArenaGeometry" type="Spatial" parent="."]
+
+[node name="Floor1" parent="ArenaGeometry" instance=ExtResource( 8 )]
+
+[node name="Wall1" parent="ArenaGeometry" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, -20 )
+
+[node name="Wall2" parent="ArenaGeometry" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 20 )
+
+[node name="Wall3" parent="ArenaGeometry" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 5.75, 0 )
+
+[node name="Wall4" parent="ArenaGeometry" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 5.75, 0 )
+
+[node name="Cube1" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 4, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.25, -17.5 )
+
+[node name="Slope1" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 3.5, 0, 0, 0, 1.53209, -2.41045, 0, 1.28558, 2.87267, 0, 0.31, -13.92 )
+
+[node name="Platform1" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 6.25, 0, 0, 0, 0.25, 0, 0, 0, 2, -13.25, 5.75, -17.5 )
+
+[node name="Platform2" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 6.25, 0, 0, 0, 0.25, 0, 0, 0, 2, 13.25, 5.75, -17.5 )
+
+[node name="Platform3" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( -2.73196e-07, 0, 2, 0, 0.25, 0, -6.25, 0, -8.74228e-08, -17.5, 5.75, -1.75 )
+
+[node name="Platform4" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( -2.73196e-07, 0, 2, 0, 0.25, 0, -6.25, 0, -8.74228e-08, 17.5, 5.75, -1.75 )
+
+[node name="SlopeEnd1" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 18, 3.5, 17.5 )
+
+[node name="SlopeEnd2" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -18, 3.5, 17.5 )
+
+[node name="Slope2" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( -3.2476, -0.125, -1.74846e-07, -1.875, 0.216506, 0, 2.83914e-07, 1.09278e-08, -2, 12.87, 1.66, 17.5 )
+
+[node name="Slope3" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 3.2476, 0.125, 0, -1.875, 0.216506, 0, 0, 0, 2, -12.87, 1.66, 17.5 )
+
+[node name="Platform5" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 18, 3.5, 13.5 )
+
+[node name="Platform6" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 14, 3.5, 13.5 )
+
+[node name="Platform7" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 10, 3.5, 13.5 )
+
+[node name="Platform8" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 6, 3.5, 13.5 )
+
+[node name="Platform9" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, 2, 3.5, 13.5 )
+
+[node name="Platform10" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -2, 3.5, 13.5 )
+
+[node name="Platform11" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -6, 3.5, 13.5 )
+
+[node name="Platform12" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -10, 3.5, 13.5 )
+
+[node name="Platform13" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -14, 3.5, 13.5 )
+
+[node name="Platform14" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 0.25, 0, 0, 0, 2, -18, 3.5, 13.5 )
+
+[node name="TooSteep1" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( -3.5, -0.216506, -3.01992e-07, -6.06218, 0.125, -1.51421e-07, 9.87455e-07, 2.32278e-08, -2, 16.5, 5.5, 8.5 )
+
+[node name="TooSteep2" parent="ArenaGeometry" instance=ExtResource( 5 )]
+transform = Transform( 3.5, 0.216506, 0, -6.06218, 0.125, 0, 0, 0, 2, -16.5, 5.5, 8.5 )
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = ExtResource( 9 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Lighting"]
+transform = Transform( -0.866026, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 5, 0 )
+shadow_enabled = true
+shadow_bias = 0.05
+directional_shadow_max_distance = 250.0
+
+[node name="KineticCube" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.958487, 0, -0.285136, 0, 1, 0, 0.285136, 0, 0.958487, 0.781923, 1.26, 3.03021 )
+
+[node name="KineticCube2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.858146, 0, 0.513406, 0, 1, 0, -0.513406, 0, 0.858146, 3.76418, 1.26, -7.75104 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.732721, 0.0905812, 0.674474, 0, 0.991102, -0.133104, -0.680529, -0.0975282, -0.726201, 9.12048, 0.618408, -11.8983 )
+fov = 31.1
+
+[node name="GUI" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="AtmosphereSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+stream = ExtResource( 1 )
+attenuation_model = 3
+unit_db = -5.0
+
+[connection signal="can_play_level" from="." to="." method="_on_can_play"]
+[connection signal="finished" from="AtmosphereSound" to="." method="_on_AtmosphereSound_finished"]

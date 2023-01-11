@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://levels/gridbox/materials/M_Dark.tres" type="Material" id=1]
+[ext_resource path="res://kinetic_cube/kinetic_cube.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=4]
+friction = 0.5
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="BoxShape" id=3]
+
+[node name="KineticCube" type="RigidBody" groups=["kinetic_props"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mass = 20.0
+physics_material_override = SubResource( 4 )
+gravity_scale = 3.0
+continuous_cd = true
+can_sleep = false
+angular_damp = 1.0
+script = ExtResource( 2 )
+
+[node name="Cube" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 3 )
